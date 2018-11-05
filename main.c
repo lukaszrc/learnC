@@ -13,7 +13,7 @@ int arr2d[][4] = {  {0, 1, 2, 3},
 					  };
                      
 int *ptr_arr = arr;
-int (**ptr_arr2d)[5][4]= arr2d;
+int **ptr_arr2d= arr2d;
 int a = 221;
 int *ptr = &a;
 int **pptr = &ptr;
@@ -44,31 +44,24 @@ choice_t choice = TWO_DIM;
 		case ONE_DIM:
 			printf("arr address: %p\t, %p\t, %p\t, %p\n", arr, &arr, ptr_arr, &ptr_arr[0]);
 			printf("arr[1]: %d\t, %d\t, %d\n", arr[1], *(arr+1), arr[1] );
-			printf("arr[1] by pointer: %d\t, %d\n", ptr_arr[1], *(ptr_arr+1) );
+			printf("arr[1] by pointer: %d\t, %d\n", ptr_arr[1], *(ptr_arr+1) ); 
 			
 			
 			break;
 		
 		case TWO_DIM:
 			printf("arr address: %p\t, %p\t, %p\t, %p\n", &arr2d, arr2d, ptr_arr2d, &ptr_arr2d[0]);
-			printf("arr[1][0]: %d\t, %d\t, %d\n", arr2d[1][0], **(arr2d+1), *arr2d[1] ); //wartosc 11
+			printf("arr[1][0]: %d\t, %d\t, %d\n", arr2d[1][0], **(arr2d+1), *arr2d[1] ); //value 2 instead of 33!!!
 			printf("arr[1][0] by ptr: %d\n", ptr_arr2d[1] );
-			
-			
-		
-			
-			//
 			printf("address arr[2][3]: %p\t, %p\t, %p\n", &arr2d[2][3], *(arr2d+2)+3, arr2d[2]+3);
-			//printf("address arr[2][3] by pointer: %p\t, %p\t, %p\n", &(ptr_arr2d[2][3]), *(arr2d+2)+3, arr2d[2]+3);
+			printf("address arr[2][3] by pointer: %p\t, %p\t, %p\n", &(ptr_arr2d[2][3]), *(arr2d+2)+3, arr2d[2]+3);
 			printf("value of arr[2][3]: %d\t, %d\t, %d\n",  arr2d[2][3], *((*(arr2d+2))+3) ,*(arr2d[2]+3));
 			
 			break;
 			
 		case THREE_DIM:
+			break;
 			
-
-
-        printf("%c\t%c", 1[p], s[1]);
 			
 	}
     return 0; 
